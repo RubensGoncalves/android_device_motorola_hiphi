@@ -18,14 +18,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from eqs device
-$(call inherit-product, device/motorola/eqs/device.mk)
+# Inherit from hiphi device
+$(call inherit-product, device/motorola/hiphi/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_eqs
-PRODUCT_DEVICE := eqs
+PRODUCT_NAME := lineage_hiphi
+PRODUCT_DEVICE := hiphi
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := motorola edge 30 ultra
@@ -33,6 +33,6 @@ PRODUCT_MODEL := motorola edge 30 ultra
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    DeviceProduct="eqs_ge" \
-    BuildDesc="eqs_ge-user 14 U1SQS34.52-21-1-10 504bf-893e0 release-keys" \
-    BuildFingerprint="motorola/eqs_ge/eqs:14/U1SQS34.52-21-1-10/504bf-893e0:user/release-keys"
+    DeviceProduct="hiphi_ge" \
+    BuildDesc="hiphi_ge-user 14 U1SQS34.52-21-1-10 504bf-893e0 release-keys" \
+    BuildFingerprint="motorola/hiphi_ge/hiphi:14/U1SQS34.52-21-1-10/504bf-893e0:user/release-keys"

@@ -14,24 +14,22 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/motorola/eqs
+DEVICE_PATH := device/motorola/hiphi
 
-# Inherit from motorola sm8475-common
-include device/motorola/sm8475-common/BoardConfigCommon.mk
+# Inherit from motorola sm8450-common
+include device/motorola/sm8450-common/BoardConfigCommon.mk
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := eqs
+TARGET_BOOTLOADER_BOARD_NAME := hiphi
 
 # HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/device_framework_matrix_eqs.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/device_framework_matrix_hiphi.xml
 ODM_MANIFEST_SKUS += dne
-ODM_MANIFEST_DNE_FILES := $(DEVICE_PATH)/manifest_eqs_dne.xml
-ODM_MANIFEST_SKUS += dn
-ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/manifest_eqs_dn.xml
+ODM_MANIFEST_DNE_FILES := $(DEVICE_PATH)/manifest_hiphi.xml
 
 # Kernel
 TARGET_KERNEL_CONFIG += \
-	vendor/ext_config/moto-waipio-eqs.config
+	vendor/ext_config/moto-waipio-hiphi.config
 
 # Partitions
 ifneq ($(WITH_GMS),true)

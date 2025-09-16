@@ -29,14 +29,14 @@ PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 BOARD_SHIPPING_API_LEVEL := 31
 PRODUCT_SHIPPING_API_LEVEL := 31
 
-# Inherit from motorola sm8475-common
-$(call inherit-product, device/motorola/sm8475-common/sm8475.mk)
+# Inherit from motorola sm8450-common
+$(call inherit-product, device/motorola/sm8450-common/sm8450.mk)
 
 # Overlay
 PRODUCT_PACKAGES += \
-    FrameworksResEqs \
-    LineageSystemUIEqs \
-    SystemUIResEqs
+    FrameworksResHiphi \
+    LineageSystemUIHiphi \
+    SystemUIResHiphi
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -52,7 +52,7 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.moto_sm8475_fod
+    android.hardware.biometrics.fingerprint@2.3-service.moto_sm8450_fod
 
 # Init
 $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/etc/init/hw/*.rc),\
@@ -85,4 +85,4 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/motorola/eqs/eqs-vendor.mk)
+$(call inherit-product, vendor/motorola/hiphi/hiphi-vendor.mk)
