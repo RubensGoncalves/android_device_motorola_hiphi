@@ -34,9 +34,9 @@ $(call inherit-product, device/motorola/sm8450-common/sm8450.mk)
 
 # Overlay
 PRODUCT_PACKAGES += \
-    FrameworksResHiphi \
-    LineageSystemUIHiphi \
-    SystemUIResHiphi
+    FrameworksReshiphi \
+    LineageSystemUIhiphi \
+    SystemUIReshiphi
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -64,9 +64,8 @@ $(foreach f,$(wildcard $(LOCAL_PATH)/rootdir/bin/*.sh),\
 
 # NFC
 PRODUCT_PACKAGES += \
+    android.hardware.nfc-service.st \
     com.android.nfc_extras \
-    NfcNci \
-    SecureElement \
     Tag
 
 # Permissions
@@ -76,10 +75,20 @@ PRODUCT_COPY_FILES += \
 
 # PowerShare
 PRODUCT_PACKAGES += \
-    vendor.lineage.powershare@1.0-service.default
+    vendor.lineage.powershare-service.default
+
+$(call soong_config_set,lineage_powershare,powershare_path,/sys/class/power_supply/wireless/device/tx_mode)
+
+# SecureElement
+PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.2-service-gto
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
+# Vibrator
+$(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.moto_sm8450-richtap)
+$(call soong_config_set,qti_vibrator,use_effect_stream,true)
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/motorola/hiphi/hiphi-vendor.mk)

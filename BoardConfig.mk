@@ -40,9 +40,6 @@ endif
 BOARD_MOT_DP_GROUP_SIZE := 11806965760 # ( BOARD_SUPER_PARTITION_SIZE - 4MB )
 BOARD_SUPER_PARTITION_SIZE := 11811160064
 
-# Powershare
-TARGET_POWERSHARE_PATH := /sys/class/power_supply/wireless/device/tx_mode
-
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
@@ -60,4 +57,4 @@ BOARD_AVB_ROLLBACK_INDEX := 19
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 19
 
 # inherit from the proprietary version
-include vendor/motorola/eqs/BoardConfigVendor.mk
+include vendor/motorola/hiphi/BoardConfigVendor.mk
